@@ -1,0 +1,504 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #0076a5;
+  background: #a1e3fd;
+}
+button:disabled {
+  border-color: #c6c7c7;
+  background: #bfc0c0;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (min-width: 1024px) {
+
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #0e748d;
+  }
+
+  button {
+    background-color: #f9f9f9;
+    border: 1px solid;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 32px;
+    background: #c2fff8;
+    gap: 8px;
+    width: 800px;     /* cố định chiều rộng */
+    height: 700px;
+  }
+
+  .body {
+    padding: 8px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    background: #eaf4f8;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    gap: 8px;
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .time {
+    display: flex;
+    width: 100%;
+  }
+
+  .timeItem {
+    display: flex;
+    border: 1px solid #1a1a1a;
+    width: 100px;
+    justify-content: center;
+    margin-left: auto;
+    padding: 4px 8px;
+    font-weight: bold;
+
+  }
+
+  .radioAnswer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .groupAnswer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; 
+    justify-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    min-height: 48px;
+    border: 1px solid #1a1a1a;
+    border-radius: 8px;
+  }
+
+  .content {
+    align-items: start;
+  }
+
+  .page {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    justify-content: center;
+    padding: 4px;
+    width: 180px;
+  }
+
+  .pageItem {
+    border: 1px solid;
+  }
+
+  .ButtonPrevNext {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .groupButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin-top: 24px;
+  }
+
+  .result {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .yourAnswer {
+    display: flex;
+    align-items: start;
+  }
+
+  .correct {
+    display: flex;
+    align-items: start;
+  }
+
+  .explanation {
+    display: flex;
+    align-items: start;
+  }
+
+  .myButton:hover {
+    background-color: #b2ffc8;
+    border-color: #4bc47c;
+    transform: scale(1.05);
+  }
+  .Buttonprev{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .Buttonnext{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pageFlag{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (min-width: 375px) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #0e748d;
+  }
+
+  button {
+    background-color: #f9f9f9;
+    border: 1px solid;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    padding: 24px;
+    background: #c2fff8;
+    gap: 8px;
+    width: 350px;     /* cố định chiều rộng */
+    height: 667px;
+  }
+
+  .body {
+    padding: 8px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    background: #eaf4f8;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    gap: 8px;
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .time {
+    display: flex;
+    width: 100%;
+  }
+
+  .timeItem {
+    display: flex;
+    border: 1px solid #1a1a1a;
+    width: 100px;
+    justify-content: center;
+    margin-left: auto;
+    padding: 4px 8px;
+    font-weight: bold;
+
+  }
+
+  .radioAnswer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .groupAnswer {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    min-height: 48px;
+    border: 1px solid #1a1a1a;
+    border-radius: 8px;
+    padding-top: 2px;
+  }
+
+  .content {
+    align-items: start;
+  }
+
+  .page {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    justify-content: center;
+    padding: 4px;
+    width: 180px;
+  }
+
+  .pageItem {
+    border: 1px solid;
+  }
+
+  .ButtonPrevNext {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+  }
+
+
+  .groupButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .result {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .yourAnswer {
+    display: flex;
+    align-items: start;
+  }
+
+  .correct {
+    display: flex;
+    align-items: start;
+  }
+
+  .explanation {
+    display: flex;
+    align-items: start;
+  }
+
+  .myButton:hover {
+    background-color: #b2ffc8;
+    border-color: #4bc47c;
+    transform: scale(1.05);
+  }
+  .Buttonprev{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .Buttonnext{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pageFlag{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #0e748d;
+  }
+
+  button {
+    background-color: #f9f9f9;
+    border: 1px solid;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    padding: 24px;
+    background: #c2fff8;
+    gap: 8px;
+    width: 800px;     
+    height: 700px;
+  }
+
+  .body {
+    padding: 8px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    background: #eaf4f8;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    gap: 8px;
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .time {
+    display: flex;
+    width: 100%;
+  }
+
+  .timeItem {
+    display: flex;
+    border: 1px solid #1a1a1a;
+    width: 100px;
+    justify-content: center;
+    margin-left: auto;
+    padding: 4px 8px;
+    font-weight: bold;
+
+  }
+
+  .radioAnswer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .groupAnswer {
+    display: flex;
+    align-items: flex-start; 
+    justify-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    min-height: 32px;
+    border: 1px solid #1a1a1a;
+    border-radius: 8px;
+  }
+
+
+  .content {
+    align-items: start;
+  }
+
+  .page {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    justify-content: center;
+    padding: 4px;
+    width: 180px;
+  }
+
+  .pageItem {
+    border: 1px solid;
+  }
+
+  .ButtonPrevNext {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .groupButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin-top: 24px;
+  }
+
+  .result {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .yourAnswer {
+    display: flex;
+    align-items: start;
+  }
+
+  .correct {
+    display: flex;
+    align-items: start;
+  }
+
+  .explanation {
+    display: flex;
+    align-items: start;
+  }
+
+  .myButton:hover {
+    background-color: #b2ffc8;
+    border-color: #4bc47c;
+    transform: scale(1.05);
+  }
+  .Buttonprev{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .Buttonnext{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pageFlag{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
