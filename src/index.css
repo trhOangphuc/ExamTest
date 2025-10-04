@@ -105,13 +105,13 @@ button:focus-visible {
 
   .timeItem {
     display: flex;
-    border: 1px solid #1a1a1a;
+    border: 1px solid #b8a500;
     width: 100px;
     justify-content: center;
     margin-left: auto;
     padding: 4px 8px;
     font-weight: bold;
-
+    background: #fffc57;
   }
 
   .radioAnswer {
@@ -252,13 +252,13 @@ button:focus-visible {
 
   .timeItem {
     display: flex;
-    border: 1px solid #1a1a1a;
+    border: 1px solid #b8a500;
     width: 100px;
     justify-content: center;
     margin-left: auto;
     padding: 4px 8px;
     font-weight: bold;
-
+    background: #fffc57;
   }
 
   .radioAnswer {
@@ -402,13 +402,13 @@ button:focus-visible {
 
   .timeItem {
     display: flex;
-    border: 1px solid #1a1a1a;
+    border: 1px solid #b8a500;
     width: 100px;
     justify-content: center;
     margin-left: auto;
     padding: 4px 8px;
     font-weight: bold;
-
+    background: #fffc57;
   }
 
   .radioAnswer {

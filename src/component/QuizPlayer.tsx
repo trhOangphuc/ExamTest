@@ -3,15 +3,16 @@ import { useQuiz } from "../hook/useQuiz";
 import { quizData } from "../data/quiz";
 import { useMemo, useEffect, useState } from "react";
 
-export const QuizPlayer: React.FC = () => {
+export const QuizPlayer = () => {
     const quiz: Quiz = quizData;
     const { current, goNext, goPrev, jumpTo, answers, setAnswers, timeLeft, submit, submitted, score } = useQuiz(quiz);
     const question = useMemo(() => quiz.questions[current], [quiz, current]);
-
-    // 🚩 state flag review later
+    const notAnswered = useMemo(
+        () => quiz.questions.filter(q => !answers[q.id] || answers[q.id] === ""),
+        [quiz.questions, answers]
+    );
     const [flagged, setFlagged] = useState<{ [id: string]: boolean }>({});
 
-    // ✅ Khôi phục tiến độ từ localStorage khi load
     useEffect(() => {
         const saved = localStorage.getItem("quizProgress");
         if (saved) {
@@ -22,7 +23,6 @@ export const QuizPlayer: React.FC = () => {
         }
     }, []);
 
-    // ✅ Tự động lưu tiến độ mỗi khi answers, current, flagged thay đổi
     useEffect(() => {
         localStorage.setItem("quizProgress", JSON.stringify({
             savedAnswers: answers,
@@ -30,17 +30,6 @@ export const QuizPlayer: React.FC = () => {
             savedFlags: flagged,
         }));
     }, [answers, current, flagged]);
-
-    const notAnswered = useMemo(
-        () => quiz.questions.filter(q => !answers[q.id] || answers[q.id] === ""),
-        [quiz.questions, answers]
-    );
-
-    const handleKey = (e: React.KeyboardEvent<HTMLDivElement>) => {
-        if (e.key === "ArrowRight") goNext();
-        if (e.key === "ArrowLeft") goPrev();
-        if (e.key === "Enter" && question.type !== "short") submit();
-    };
 
     const handleChange = (value: string) => {
         if (question.type === "boolean") {
@@ -70,7 +59,7 @@ export const QuizPlayer: React.FC = () => {
                 <h1>Result: {score} / {quiz.questions.length}</h1>
                 {quiz.questions.map(q => {
                     const userAnswer = answers[q.id];
-                    const isCorrect = q.correctAnswers.includes(userAnswer);
+                    const isCorrect = q.correctAnswers.includes(userAnswer as "true" | "false");
 
                     return (
                         <div className="result" key={q.id}>
@@ -105,7 +94,7 @@ export const QuizPlayer: React.FC = () => {
     }
 
     return (
-        <div className="main" tabIndex={0} onKeyDown={handleKey}>
+        <div className="main" >
             <div className="time">
                 {quiz.durationMinutes && <div className="timeItem" style={{ fontWeight: "bold" }}>Time: {timeLeft}</div>}
             </div>
